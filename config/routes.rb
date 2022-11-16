@@ -8,6 +8,14 @@ Rails.application.routes.draw do
 
   get("/user_sign_up", {:controller => "users", :action => "new_registration_form"})
 
+  # Sign In
+  get("/user_sign_in", {:controller => "users", :action => "sign_in"})
+
+  post("/verify_creds", {:controller => "users", :action => "authenticate"})
+
+  #Sign out
+  get("/user_sign_out", {:controller => "users", :action => "toast_cookies"})
+
   # CREATE
   get("/insert_user_record", {:controller => "users", :action => "create" })
 
